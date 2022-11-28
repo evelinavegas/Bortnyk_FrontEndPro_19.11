@@ -15,8 +15,11 @@ let sport = prompt('Enter your favourite kind of sport', 'Footbol');
 // і на місце точок підставляємо країну, столицею якої є місто. Інакше показуємо йому “ти живеш у місті…”, де місце точок – введене місто.
 
 
-const yearsOld = 2022 - yearBirth;
+let yearsOld;
 
+if(yearBirth > 0){
+    yearsOld = 2022 - yearBirth;
+}
 switch(hometown) {
     case "Kyiv":
     case "kyiv":
@@ -29,6 +32,10 @@ switch(hometown) {
     case "London":
     case "london":
         hometown = 'You live in the capital of United Kingdom'
+        break;
+    case null:
+    case "":
+        hometown = "it's a pity that you didn't want to specify"
         break;
     default:
         hometown = `You live in ${hometown}`
@@ -47,6 +54,10 @@ switch(sport) {
     case "chess":
     case "Chess":
         sport = 'Cool! Do you want to become like William Steinitz'
+        break;
+    case null:
+    case "":
+        sport = "it's a pity that you didn't want to specify"
         break;
     default:
         sport = `Your favorite sport ${sport}`
