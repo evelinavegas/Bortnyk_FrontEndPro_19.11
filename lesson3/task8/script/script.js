@@ -76,7 +76,6 @@ const filterBalance = users.map(balance);
 function balance(item) {
     let balanceN = item.balance.replace(/(\$)/ , '');
     balanceN = balanceN.replace(',' , '');
-    // balanceN = balanceN.replace('.' , ',');
     balanceN = Number(balanceN)
     return balanceN
 }
