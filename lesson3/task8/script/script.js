@@ -55,17 +55,43 @@ let users = [
     }
 ];
 
+// Вивести масив телефонних номерів користувачів, у яких баланс більше 2000 доларів.
+
 const filterUsersBalance = users.filter(function(item){
     return item.balance >= "$2,000"
 });
-console.log(filterUsersBalance);
+// console.log(filterUsersBalance);
 
 const filterPhone = filterUsersBalance.map(filter);
 
 function filter(item) {
     return item.phone;
 }
-
 console.log(filterPhone);
 
+// І знайти суму всіх балансів користувачів
+
+const filterBalance = users.map(balance);
+
+function balance(item) {
+    let balanceN = item.balance.replace(/(\$)/ , '');
+    balanceN = balanceN.replace(',' , '');
+    // balanceN = balanceN.replace('.' , ',');
+    balanceN = Number(balanceN)
+    return balanceN
+}
+// console.log(filterBalance);
+
+// знайти суму всіх балансів користувачів
+
+const sum = filterBalance.reduce((item, value) => item + value, 0);
+console.log('Sum of user balances:', sum.toFixed(2))
+
+// let sum = 0;
+// function sumElement() {
+//     for(i = 0; i < filterBalance.length; i++) {
+//         sum += filterBalance[i]
+//     }   
+// }
+// sumElement()
 
