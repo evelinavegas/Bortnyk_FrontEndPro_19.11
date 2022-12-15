@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gallery{
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.gallery > img{
+    width: 500px;
+    /* height: 200px; */
+}
