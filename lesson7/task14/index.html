@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/lesson7/task14/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form">
+            <form action="#" id="form" class="form__body">
+                <h1 class="form__title">Форма</h1>
+                <div class="form__item">
+                    <label for="formName" class="form__lebel">Ім'я:</label>
+                    <input type="text" name="Name" class="form__input">
+                </div>
+                <div class="form__item">
+                    <label for="forSuremName" class="form__lebel">Прізвище:</label>
+                    <input type="text" name="Surname" class="form__input">
+                </div>
+                <div class="form__item">
+                    <label for="birth" class="form__lebel">Дата народження:</label>
+                    <input type="text" name="Birth" class="form__input">
+                </div>
+                <div class="form__item">
+                    <div class="form__label">Стать:</div>
+                    <div class="option">
+                        <div class="option__item">
+                            <input type="radio" checked name="Gender" value="Чоловік" class="option__input">
+                            <label for="man" class="option__label">Чоловік</label>
+                        </div>
+                        <div class="option__item">
+                            <input type="radio" name="Gender" value="Жінка" class="option__input">
+                            <label for="woman" class="option__label">Жінка</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__item">
+                    <div class="form__lable">Місто:</div>
+                    <select name="Sity" class="select" id="selectCity">
+                    </select>
+                </div>
+                <div class="form__item">
+                    <label for="Address" class="form__lebel">Адреса:</label>
+                    <textarea name="Address" class="form__input"></textarea>
+                </div>
+                <div class="form__item">
+                    <div class="form__lable">Мови:</div>
+                    <div class="checkbox">
+                        <input type="checkbox" name="language" value="Українська">
+                        <label for="label1">Українська</label><br>
+                        <input type="checkbox" name="language" value="Англійська">
+                        <label for="label2">Англійська</label><br>
+                        <input type="checkbox" name="language" value="Jewish">
+                        <label for="label3">Іврит</label><br>
+                    </div>
+                </div>
+                <button type="submit" class="form__button">Зберегти</button>
+            </form>            
+        </div>       
+    </div>
+     <div class="table" id="table">
+        <div class="table__column_left table__column">
+
+        </div>
+        <div class="table__column_right table__column">
+
+        </div>
+    </div>
+    <script src="/lesson7/task14/js/script.js"></script>
+</body>
+</html>
