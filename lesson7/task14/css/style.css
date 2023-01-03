@@ -3,79 +3,118 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
     font-family: 'Roboto', sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(213, 213, 213);
+}
+.container__block{
+    width: 50%;
+    padding: 20px;
+}
+.container__block > h2{
+    display: block;
+    padding: 20px 0 20px 0;
+}
+.container__block > h2 > span{
+    color: rgb(225, 4, 4);
+}
+.container__img{
+    width: 400px;
+    height: 400px;
+}
+.container__nav{
+    font-size: 15px;
+}
+.container__nav > li{
+    list-style-type: disc;
+}
+.container__btn{
+    width: 200px;
+    height: 70px;
+    background-color: rgb(60, 93, 154);
     color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
 }
-.wrapper{
-    padding: 30px;
-}
-.form{
-    max-width: 550px;
-    margin: 0 auto;
-    padding: 30px;
-    background: rgb(63, 71, 90);
+.container__btn:hover{
+    background-color: rgb(25, 55, 110);
 }
 
+
+/* Form */
+.form{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.form__body{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    padding: 30px;
+    background-color: rgb(250, 192, 123);
+}
 .form__title{
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 30px;
 }
-.form__item{
-    margin-bottom: 20px;
-}
-.form__lebel{
+.form__lable{
     display: block; 
     font-size: 18px;   
     margin-bottom: 10px;
 }
-.form__input{
+.form__item{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.form__input, .select{
     height: 50px;
     padding: 0 20px;
     border-radius: 5px;
+    border: 1px solid #111;
     width: 100%;
     font-size: 18px;
     color: #111;
     transition: all 0.5s ease 0s;
 }
-
 textarea.form__input{
     min-height: 70px;
     resize: vertical;
     padding: 20px;
 }
-
-.option{
-    padding-top: 10px;
+.count__number{
+    display: flex;
 }
-.option__item{
-    margin-bottom: 10px;
+.count__number > input{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px #111 solid;
+    cursor: pointer;
 }
-
-.select{
-    width: 100%;
-    height: 40px;
-    margin-top: 10px;
-    border-radius: 5px;
-    padding: 10px;
-}
-.select > option {
-
-}
-.checkbox{
-    padding: 10px 0 10px 0;
-}
-.checkbox > label {
-    margin-left: 10px;
+.count__number > p{
+    margin: 0 5px 0;
 }
 .form__button{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60px;
-    background-color: rgb(230, 208, 41);
+    margin: 0 auto;
+    width: 200px;
+    height: 70px;
+    background-color: rgb(1, 111, 9);
+    color: #fff;
     font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
@@ -86,22 +125,22 @@ textarea.form__input{
     transition: 0.5s;
 }
 .form__button:hover{
-    background-color: rgb(193, 175, 34);
+    background-color: rgb(9, 83, 14);
 }
-.form__button:active{
-    top: 3px;
-    box-shadow: none;
+
+._error{
+    border: rgb(255, 1, 1) 1px solid;
+    box-shadow: rgb(255, 1, 1) 0px 5px 15px;
 }
-.displayNone{
+ .display_none{
     display: none;
-}
-
-
+} 
 .table{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding-top: 20px;
 }
 .table__column{
     width: 300px;

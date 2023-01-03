@@ -4,64 +4,107 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/lesson7/task14/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="form">
+    <div class="wrapper" id="goods">
+        <div class="container">
+            <div class="container__block">
+                <h2>Професійна кавомашина SAB JOLLY 1gr</h2>
+                <img src="/lesson7/task13/img/1.jpg" alt="" class="container__img">
+            </div>
+            <div class="container__block container__info">
+                <h2>Опис:</h2>
+                <ol class="container__nav">
+                    <li>Автоматичний або напівавтоматичний контроль кави і гарячої води</li>
+                    <li>Трубка дла пари і води з нержавіючої сталі</li>
+                    <li>Піддон може бути встановлений на двох рівнях для розміщення різних розмірів чашок / склянок</li>
+                    <li>Термосифонна система</li>
+                    <li>Мідний бойлер (Cu 99.5) з антикорозійним покриттям</li>
+                    <li>Бойлер 5,00 л.</li>
+                    <li>Вага 34 кг</li>
+                    <li>Розміри ДхШхВ (см) 37х54х51</li>
+                    <li>Потужність 2000 Вт</li>
+                    <li>Напруга 220 В</li>
+                </ol>
+                <h2>Ціна: <span>20 000 uah</span></h2>
+                <button class="container__btn" id="btn">Купити</button>
+            </div>
+        </div>
+
+        <div class="form display_none">
             <form action="#" id="form" class="form__body">
-                <h1 class="form__title">Форма</h1>
+                <h1 class="form__title">Оформлення замовлення</h1>
+                <!-- ПІБ -->
+                <div class="form__item">
+                    <label for="formName" class="form__lebel">Прізвище:</label>
+                    <input type="text" name="Прізвище" class="form__input _req surName">
+                </div>
                 <div class="form__item">
                     <label for="formName" class="form__lebel">Ім'я:</label>
-                    <input type="text" name="Name" class="form__input">
+                    <input type="text" name="Ім'я" class="form__input _req name">
                 </div>
                 <div class="form__item">
-                    <label for="forSuremName" class="form__lebel">Прізвище:</label>
-                    <input type="text" name="Surname" class="form__input">
+                    <label for="formName" class="form__lebel">По батькові:</label>
+                    <input type="text" name="По батькові" class="form__input _req middleName">
                 </div>
-                <div class="form__item">
-                    <label for="birth" class="form__lebel">Дата народження:</label>
-                    <input type="text" name="Birth" class="form__input">
-                </div>
-                <div class="form__item">
-                    <div class="form__label">Стать:</div>
-                    <div class="option">
-                        <div class="option__item">
-                            <input type="radio" checked name="Gender" value="Чоловік" class="option__input">
-                            <label for="man" class="option__label">Чоловік</label>
-                        </div>
-                        <div class="option__item">
-                            <input type="radio" name="Gender" value="Жінка" class="option__input">
-                            <label for="woman" class="option__label">Жінка</label>
-                        </div>
-                    </div>
-                </div>
+                <!-- Місто -->
                 <div class="form__item">
                     <div class="form__lable">Місто:</div>
-                    <select name="Sity" class="select" id="selectCity">
+                    <select name="Місто" class="select" id="selectCity">
+                        
+                    </select>
+                </div>
+                <!-- НП -->
+                <div class="form__item">
+                    <div class="form__lable">Відділення НП:</div>
+                    <select name="Відділення НП" class="select" id="">
+                        <option value="1" selected="selected">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
                     </select>
                 </div>
                 <div class="form__item">
-                    <label for="Address" class="form__lebel">Адреса:</label>
-                    <textarea name="Address" class="form__input"></textarea>
-                </div>
-                <div class="form__item">
-                    <div class="form__lable">Мови:</div>
-                    <div class="checkbox">
-                        <input type="checkbox" name="language" value="Українська">
-                        <label for="label1">Українська</label><br>
-                        <input type="checkbox" name="language" value="Англійська">
-                        <label for="label2">Англійська</label><br>
-                        <input type="checkbox" name="language" value="Jewish">
-                        <label for="label3">Іврит</label><br>
+                    <div class="form__lable">Оплата:</div>
+                    <div class="option">
+                        <div class="option__item">
+                            <input type="radio" checked name="Оплата" value="Оплата банківською картою" class="option__input">
+                            <label for="Оплата банківською картою" class="option__label">Оплата банківською картою</label>
+                        </div>
+                        <div class="option__item">
+                            <input type="radio" name="Оплата" value="Післяоплата" class="option__input">
+                            <label for="Післяоплата" class="option__label">Післяоплата</label>
+                        </div>
                     </div>
                 </div>
-                <button type="submit" class="form__button">Зберегти</button>
-            </form>            
-        </div>       
+                <div class="form__item ">
+                    <div class="form__item">
+                        <div class="form__lable">Кількість</div>
+                        <select name="Кількість" class="select" id="">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__item">
+                    <label for="Address" class="form__lable">Повідомлення:</label>
+                    <textarea name="Повідомлення" class="form__input"></textarea>
+                </div>
+                <button type="submit" class="form__button">Send</button>
+            </form>
+        </div>
     </div>
-     <div class="table" id="table">
+    <div class="table" id="table">
         <div class="table__column_left table__column">
 
         </div>
@@ -69,6 +112,6 @@
 
         </div>
     </div>
-    <script src="/lesson7/task14/js/script.js"></script>
+    <script src="/lesson7/task13/js/script.js"></script>
 </body>
 </html>

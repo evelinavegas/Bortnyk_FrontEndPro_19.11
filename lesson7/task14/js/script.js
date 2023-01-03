@@ -1,4 +1,12 @@
-"use strict"
+const btn = document.getElementById('btn');
+const form = document.querySelector('.form');
+
+
+btn.addEventListener('click', () => {
+   form.classList.remove('display_none');
+})
+
+// Список міст
 
 let cities = [
     "Київ",
@@ -36,38 +44,45 @@ let optionCity = cities.map(city =>{
 
 selectCity.innerHTML = optionCity;
 
-const formWrap = document.querySelector('.form');
-const form = document.querySelector('#form');
-
-
-const column1 = document.querySelector('.table__column_left');
-const column2 = document.querySelector('.table__column_right');
-
 
 form.addEventListener('submit', (e) =>{
-    e.preventDefault()
-    formWrap.classList.add('displayNone');
+    e.preventDefault();
     const data = Object.fromEntries( new FormData(e.target).entries()); 
+    const formReq = document.querySelectorAll('._req');
+    let error = 0;
+    const container = document.getElementById('goods');
+
 
     const dataKeysArr = Object.keys(data);
     const dataValuesArr = Object.values(data);
-    // console.log(dataKeysArr);
-    // console.log(dataValueArr);
+    const column1 = document.querySelector('.table__column_left');
+    const column2 = document.querySelector('.table__column_right');
+
+    for(let i = 0; i < formReq.length; i++){
+        const input = formReq[i];
+        formAddError(input);
+        if(input.value == ''){
+            formAddError(input);
+            error++;            
+        }
+    }
+    if(error >= 1){
+        alert(`Заповніть обов'язкові поля`);
+    } else if(error == 0){
+        container.classList.add('display_none')
+        let columnKey = dataKeysArr.map(key =>{
+            return `<div>${key}</div>`
+        }).join('');
     
-    let columnKey = dataKeysArr.map(key =>{
-        return `<div>${key}</div>`
-        // console.log(i)
-    }).join('');
-
-    column1.innerHTML = columnKey;
-
-    let columnValue = dataValuesArr.map(value =>{
-        return `<div>${value}</div>`
-        // console.log(i)
-    }).join('');
-
-    column2.innerHTML = columnValue;
+        column1.innerHTML = columnKey;
+    
+        let columnValue = dataValuesArr.map(value =>{
+            return `<div>${value}</div>`
+        }).join('');
+    
+        column2.innerHTML = columnValue;
+    }
 });
-
-
-
+function formAddError(input) {
+    input.classList.add('_error');
+}
